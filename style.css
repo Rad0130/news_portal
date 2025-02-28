@@ -1,0 +1,241 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background: url('jul5.jpg'); /* Keep the background image */
+    color: #333; /* Default text color */
+}
+
+/* Header Styling */
+header {
+    background-color: #8B0000; /* Dark red background */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Navigation Styling */
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #B22222; /* Firebrick red */
+    padding: 0.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+nav a:hover {
+    background-color: #8B0000; /* Dark red on hover */
+    border-radius: 5px;
+}
+
+/* Container Styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Hero Section Styling */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Categories, Trending, Comments, and Advice Box Sections */
+.categories, .trending, .comments, .advice-box {
+    margin-bottom: 2rem;
+}
+
+.categories h2, .trending h2, .comments h2, .advice-box h2 {
+    background-color: #8B0000; /* Dark red */
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+/* News Items and Trending Items */
+.news-item, .trending-item, .comment-item {
+    background-color: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styling */
+footer {
+    background-color: #B22222; /* Firebrick red */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #8B0000; /* Dark red */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #B22222; /* Firebrick red on hover */
+}
+
+/* Authentication Buttons */
+.auth-buttons {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.auth-button {
+    background-color: #8B0000; /* Dark red */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.auth-button:hover {
+    background-color: #B22222; /* Firebrick red on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Quota Reform Section */
+.quota-reform-section {
+    background-color: #fff5f5; /* Light reddish background */
+    padding: 50px 20px;
+    margin: 50px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+.quota-reform-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #8B0000; /* Dark red */
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #8B0000;
+    padding-bottom: 10px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns: Text and Gallery */
+    gap: 30px;
+    align-items: start;
+}
+
+.text-content {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.text-content h2 {
+    font-size: 1.5rem;
+    color: #8B0000; /* Dark red */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.text-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.text-content ul li {
+    margin-bottom: 10px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid for images */
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .text-content {
+        font-size: 0.9rem;
+    }
+
+    .gallery img {
+        max-width: 100%;
+    }
+}
+
+/* Dark Mode Styling */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+button.dark-mode-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    background-color: #8B0000; /* Dark red */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+img{
+    width: 50%;
+}

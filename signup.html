@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register & Login</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <!-- Signup Form -->
+    <div class="container" id="signup">
+        <h1 class="form-title">Register</h1>
+        <form method="post" action="register.php">
+            <div class="input-group">
+                <input type="text" name="fName" placeholder="First Name" required>
+                <label>First Name</label>
+            </div>
+            <div class="input-group">
+                <input type="text" name="lName" placeholder="Last Name" required>
+                <label>Last Name</label>
+            </div>
+            <div class="input-group">
+                <input type="email" name="email" placeholder="Email" required>
+                <label>Email</label>
+            </div>
+            <div class="input-group">
+                <input type="password" name="password" placeholder="Password" required>
+                <label>Password</label>
+            </div>
+            <input type="submit" class="btn" value="Sign Up" name="signUp">
+        </form>
+        <p>Already have an account? <button id="signInButton">Sign In</button></p>
+    </div>
+
+    <!-- Sign-In Form -->
+    <div class="container" id="signIn" style="display:none;">
+        <h1 class="form-title">Sign In</h1>
+        <form method="post" action="register.php">
+            <div class="input-group">
+                <input type="email" name="email" placeholder="Email" required>
+                <label>Email</label>
+            </div>
+            <div class="input-group">
+                <input type="password" name="password" placeholder="Password" required>
+                <label>Password</label>
+            </div>
+            <input type="submit" class="btn" value="Sign In" name="signIn">
+        </form>
+        <p>Don't have an account? <button id="signUpButton">Sign Up</button></p>
+    </div>
+
+    <script>
+        const signUpButton = document.getElementById('signUpButton');
+        const signInButton = document.getElementById('signInButton');
+        const signUpForm = document.getElementById('signup');
+        const signInForm = document.getElementById('signIn');
+
+        signUpButton.addEventListener('click', () => {
+            signInForm.style.display = "none";
+            signUpForm.style.display = "block";
+        });
+
+        signInButton.addEventListener('click', () => {
+            signUpForm.style.display = "none";
+            signInForm.style.display = "block";
+        });
+    </script>
+</body>
+</html>
