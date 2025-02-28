@@ -18,15 +18,26 @@ $user = $result->fetch_assoc();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="July Chronicles - Your Gateway to Authentic News and Community Voices">
+    <title>July Chronicles</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
 </head>
 <body>
-    <header>
+    <!-- Header -->
+        <header>
         <h1>Welcome, <?php echo $user['first_name'] . ' ' . $user['last_name']; ?>!</h1>
-        <a href="logout.php">Logout</a>
+        <a href="logout.php"><button class="auth-button" onclick="window.location.href='index.html'">Logout</button></a>
+
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+        <div class="language-switcher">
+            <button onclick="setLanguage('en')">English</button>
+            <button onclick="setLanguage('bn')">বাংলা</button>
+        </div>
+        <h1>July Chronicles</h1>
+        <p>Your Gateway to Authentic News and Community Voices</p>
     </header>
 
+    <!-- Navigation -->
     <nav>
         <a href="#home">Home</a>
         <a href="#categories">Categories</a>
@@ -139,22 +150,19 @@ $user = $result->fetch_assoc();
         <!-- Comments Section -->
         <section class="comments" id="comments">
             <h2>Community Comments</h2>
-            <div class="comment-item">
-                <p><strong>User1:</strong> This is a great article! I learned a lot.</p>
+            <div id="comments-container">
+                <!-- Comments will be dynamically loaded here -->
             </div>
-            <div class="comment-item">
-                <p><strong>User2:</strong> I have a different opinion on this topic.</p>
-            </div>
-            <textarea placeholder="Write your comment here..." rows="4" style="width: 100%;"></textarea>
-            <button class="btn">Submit Comment</button>
+            <textarea id="comment-input" placeholder="Write your comment here..." rows="4" style="width: 100%;"></textarea>
+            <button class="btn" onclick="submitComment(1)">Submit Comment</button> <!-- Replace 1 with the article ID -->
         </section>
 
         <!-- Advice Box Section -->
         <section class="advice-box" id="advice-box">
             <h2>Advice Box</h2>
             <p>Have advice or suggestions? Share them with us!</p>
-            <textarea placeholder="Write your advice here..." rows="4" style="width: 100%;"></textarea>
-            <button class="btn">Submit Advice</button>
+            <textarea id="advice-input" placeholder="Write your advice here..." rows="4" style="width: 100%;"></textarea>
+            <button class="btn" onclick="submitAdvice()">Submit Advice</button>
         </section>
     </div>
 
@@ -226,6 +234,50 @@ $user = $result->fetch_assoc();
     if (localStorage.getItem('darkMode') === 'true') {
         document.body.classList.add('dark-mode');
     }
+    </script>
+    <script>
+        function submitComment(articleId) {
+    const commentInput = document.getElementById('comment-input');
+    const comment = commentInput.value;
+
+    fetch('submit_comment.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ article_id: articleId, comment })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert(data.message);
+            location.reload(); // Reload the page to show the new comment
+        } else {
+            alert(data.message);
+        }
+    })
+    .catch(error => console.error('Error submitting comment:', error));
+}
+    </script>
+    <script>
+        function submitAdvice() {
+    const adviceInput = document.getElementById('advice-input');
+    const advice = adviceInput.value;
+
+    fetch('submit_advice.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ advice })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert(data.message);
+            adviceInput.value = ''; // Clear the input field
+        } else {
+            alert(data.message);
+        }
+    })
+    .catch(error => console.error('Error submitting advice:', error));
+}
     </script>
 </body>
 </html>
