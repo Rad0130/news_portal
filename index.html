@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
 </head>
 <body>
-    <button class="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
     <!-- Header -->
     <header>
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
         <div class="language-switcher">
             <button onclick="setLanguage('en')">English</button>
             <button onclick="setLanguage('bn')">বাংলা</button>
@@ -24,204 +24,315 @@
 
     <!-- Navigation -->
     <nav>
-        <a href="#home">Home</a>
-        <a href="#categories">Categories</a>
-        <a href="#trending">Trending</a>
-        <a href="#advice-box">Advice Box</a>
-        <a href="#about">About</a>
+        <a href="#home" data-translate="home">Home</a>
+        <a href="#categories" data-translate="categories">Categories</a>
+        <a href="#trending" data-translate="trending">Trending</a>
+        <a href="#advice-box" data-translate="adviceBox">Advice Box</a>
+        <a href="#about" data-translate="about">About</a>
     </nav>
 
     <!-- Main Content -->
     <div class="container">
         <section id="latest-news" class="latest-news">
-            <h2>Latest News</h2>
+            <h2 data-translate="latestNews">Latest News</h2>
             <div id="news-container" class="news-container">
                 <!-- Articles will be dynamically loaded here -->
             </div>
         </section>
+
         <!-- Hero Section -->
         <section class="hero">
-            <div>
-                <h2>Breaking News</h2>
+            <!-- <div>
+                <h2 data-translate="breakingNews">Breaking News</h2>
                 <img class="brk" src="b.png" alt="Breaking News">
-                <p>Stay updated with the latest news from Bangladesh and around the world.</p>
-                <a href="#" class="btn">Read More</a>
+                <p data-translate="breakingNewsText">Stay updated with the latest news from Bangladesh and around the world.</p>
+                <a href="#" class="btn" data-translate="readMore">Read More</a>
+            </div> -->
+            <div class="breaking-news-slider">
+                <!-- News items will be dynamically loaded here -->
             </div>
-
         </section>
 
+        <!-- Quota Reform Section -->
         <section id="july-quota-reform" class="quota-reform-section">
             <div class="container">
-                <!-- Title -->
-                <h1 class="section-title">July Quota Reform Movement of Bangladesh</h1>
-        
-                <!-- Main Content -->
+                <h1 class="section-title" data-translate="quotaReformTitle">July Quota Reform Movement of Bangladesh</h1>
                 <div class="content">
                     <div class="gallery">
-
                         <img src="jul5.jpg" alt="Quota Reform Protest 5">
                         <img src="jul1.jpg" alt="Quota Reform Protest 1">
                         <img src="jul2.jfif" alt="Quota Reform Protest 2">
                         <img src="jul3.jpg" alt="Quota Reform Protest 3">
                         <img src="jul4.webp" alt="Quota Reform Protest 4">
                     </div>
-                    <!-- Left Column: Text -->
                     <div class="text-content">
-                        <p class="section-description">
+                        <p class="section-description" data-translate="quotaReformDescription">
                             The Quota Reform Movement of Bangladesh was a significant student-led protest that took place in July 2018. 
                             The movement aimed to reform the government job quota system, which reserved 56% of government jobs for specific groups, 
                             leaving only 44% for the general population. Students and job seekers across the country demanded a fairer system, 
                             arguing that the existing quota system was outdated and discriminatory.
                         </p>
-        
-                        <h2>Causes of the Movement</h2>
+                        <h2 data-translate="causesOfMovement">Causes of the Movement</h2>
                         <ul class="causes-list">
-                            <li>The government job quota system reserved 56% of jobs for specific groups, including freedom fighters' families, women, and minorities.</li>
-                            <li>Only 44% of jobs were open to the general population, creating frustration among students and job seekers.</li>
-                            <li>Many argued that the quota system was outdated and did not reflect the current socio-economic realities of Bangladesh.</li>
+                            <li data-translate="cause1">The government job quota system reserved 56% of jobs for specific groups, including freedom fighters' families, women, and minorities.</li>
+                            <li data-translate="cause2">Only 44% of jobs were open to the general population, creating frustration among students and job seekers.</li>
+                            <li data-translate="cause3">Many argued that the quota system was outdated and did not reflect the current socio-economic realities of Bangladesh.</li>
                         </ul>
-        
-                        <h2>Effects of the Movement</h2>
+                        <h2 data-translate="effectsOfMovement">Effects of the Movement</h2>
                         <ul class="effects-list">
-                            <li>The government announced the abolition of the quota system for government jobs in response to the protests.</li>
-                            <li>The movement highlighted the power of student activism in Bangladesh.</li>
-                            <li>It sparked a national conversation about fairness, equality, and meritocracy in public sector recruitment.</li>
+                            <li data-translate="effect1">The government announced the abolition of the quota system for government jobs in response to the protests.</li>
+                            <li data-translate="effect2">The movement highlighted the power of student activism in Bangladesh.</li>
+                            <li data-translate="effect3">It sparked a national conversation about fairness, equality, and meritocracy in public sector recruitment.</li>
                         </ul>
                     </div>
-        
-                    
                 </div>
             </div>
         </section>
 
         <!-- Categories Section -->
-       <!-- Categories Section -->
         <section class="categories" id="categories">
-            <h2>News Categories</h2>
+            <h2 data-translate="newsCategories">News Categories</h2>
             <div class="news-item">
                 <img src="sp.jpg" alt="Sports News" class="category-image">
-                <h3>Sports</h3>
-                <p>Catch up on the latest sports news and events.</p>
-                <a href="https://www.tsports.com/" class="btn">Explore</a>
+                <h3 data-translate="sports">Sports</h3>
+                <p data-translate="sportsDescription">Catch up on the latest sports news and events.</p>
+                <a href="https://www.tsports.com/" class="btn" data-translate="explore">Explore</a>
             </div>
             <div class="news-item">
                 <img src="p.jpg" alt="Political News" class="category-image">
-                <h3>Politics</h3>
-                <p>Latest updates on political events and decisions in Bangladesh.</p>
-                <a href="https://www.politico.com/" class="btn">Explore</a>
+                <h3 data-translate="politics">Politics</h3>
+                <p data-translate="politicsDescription">Latest updates on political events and decisions in Bangladesh.</p>
+                <a href="https://www.politico.com/" class="btn" data-translate="explore">Explore</a>
             </div>
             <div class="news-item">
                 <img src="cu.webp" alt="Cultural News" class="category-image">
-                <h3>Culture</h3>
-                <p>Discover the rich cultural heritage of Bangladesh.</p>
-                <a href="https://www.bbc.com/culture" class="btn">Explore</a>
+                <h3 data-translate="culture">Culture</h3>
+                <p data-translate="cultureDescription">Discover the rich cultural heritage of Bangladesh.</p>
+                <a href="https://www.bbc.com/culture" class="btn" data-translate="explore">Explore</a>
             </div>
         </section>
+
         <!-- Trending News Section -->
-        <section class="trending" id="trending">
-            <h2>Trending News</h2>
+        <!-- <section class="trending" id="trending">
+            <h2 data-translate="trendingNews">Trending News</h2>
             <div class="trending-item">
-                <h3>Headline 1</h3>
-                <p>Short description of the trending news.</p>
-                <a href="#" class="btn">Read More</a>
+                <h3 data-translate="headline1">Headline 1</h3>
+                <p data-translate="shortDescription">Short description of the trending news.</p>
+                <a href="#" class="btn" data-translate="readMore">Read More</a>
             </div>
             <div class="trending-item">
-                <h3>Headline 2</h3>
-                <p>Short description of the trending news.</p>
-                <a href="#" class="btn">Read More</a>
+                <h3 data-translate="headline2">Headline 2</h3>
+                <p data-translate="shortDescription">Short description of the trending news.</p>
+                <a href="#" class="btn" data-translate="readMore">Read More</a>
+            </div>
+        </section> -->
+        <section class="trending" id="trending-news">
+            <h2 data-translate="trendingNews">Trending News</h2>
+            <div class="trending-news-slider">
+                <!-- News items will be dynamically loaded here -->
             </div>
         </section>
 
         <!-- Comments Section -->
         <section class="comments" id="comments">
-            <h2>Community Comments</h2>
-            <div class="comment-item">
-                <p><strong>User1:</strong> This is a great article! I learned a lot.</p>
-            </div>
-            <div class="comment-item">
-                <p><strong>User2:</strong> I have a different opinion on this topic.</p>
-            </div>
-            <textarea placeholder="Write your comment here..." rows="4" style="width: 100%;"></textarea>
-            <button class="btn">Submit Comment</button>
+            <h2 data-translate="communityComments">Community Comments</h2>
+            <textarea id="comment-input" placeholder="Signup to access these features" rows="4" style="width: 100%;"></textarea>
+            <button class="auth-button" onclick="window.location.href='signup.html'">Sign Up</button>
         </section>
 
         <!-- Advice Box Section -->
         <section class="advice-box" id="advice-box">
-            <h2>Advice Box</h2>
-            <p>Have advice or suggestions? Share them with us!</p>
-            <textarea placeholder="Write your advice here..." rows="4" style="width: 100%;"></textarea>
-            <button class="btn">Submit Advice</button>
+            <h2 data-translate="adviceBoxTitle">Advice Box</h2>
+            <p data-translate="adviceBoxText">Have advice or suggestions? Share them with us!</p>
+            <textarea id="advice-input" placeholder="Write your advice here..." rows="4" style="width: 100%;"></textarea>
+            <button class="auth-button" onclick="window.location.href='signup.html'">Sign Up</button>
         </section>
     </div>
 
-    <section id="global-news">
-        <h2>Global News</h2>
-        <div id="global-news-container"></div>
-    </section>
-
     <!-- Footer -->
     <footer>
-        <p>&copy; 2023 July Chronicles. All rights reserved.</p>
+        <p data-translate="footer">© 2023 July Chronicles. All rights reserved.</p>
     </footer>
+
+    <!-- JavaScript -->
     <script>
-        // Fetch articles from the backend
-        fetch('fetch_articles.php')
-            .then(response => response.json())
-            .then(data => {
-                const newsContainer = document.getElementById('news-container');
-                data.forEach(article => {
-                    const articleDiv = document.createElement('div');
-                    articleDiv.classList.add('news-item');
-                    articleDiv.innerHTML = `
-                        <img src="${article.image}" alt="${article.title}">
-                        <h3>${article.title}</h3>
-                        <p>${article.content.substring(0, 150)}...</p>
-                        <a href="article.php?id=${article.id}" class="btn">Read More</a>
-                    `;
-                    newsContainer.appendChild(articleDiv);
-                });
-            })
-            .catch(error => console.error('Error fetching articles:', error));
-
-            function setLanguage(lang) {
-        document.cookie = `language=${lang}; path=/`;
-        location.reload();
+    // Function to set the language preference
+    function setLanguage(lang) {
+        // Save the language preference in a cookie
+        document.cookie = `language=${lang}; path=/; max-age=31536000`; // 1 year expiration
+        location.reload(); // Reload the page to apply the language
     }
 
-    // Apply language
-    const lang = document.cookie.split('; ').find(row => row.startsWith('language=')).split('=')[1];
-    if (lang === 'bn') {
-        document.body.innerHTML = document.body.innerHTML.replace(/English Text/g, 'বাংলা টেক্সট');
+    // Function to get the value of a cookie
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
     }
-    </script>
+
+    // Function to apply the selected language
+    function applyLanguage() {
+        const lang = getCookie('language') || 'en'; // Default to English if no cookie is set
+
+        // Define translations for Bangla (bn)
+        const translations = {
+            en: {
+                title: "July Chronicles",
+                description: "Your Gateway to Authentic News and Community Voices",
+                home: "Home",
+                categories: "Categories",
+                trending: "Trending",
+                adviceBox: "Advice Box",
+                about: "About",
+                latestNews: "Latest News",
+                breakingNews: "Breaking News",
+                readMore: "Read More",
+                communityComments: "Community Comments",
+                submitComment: "Submit Comment",
+                adviceBoxTitle: "Advice Box",
+                submitAdvice: "Submit Advice",
+                footer: "© 2023 July Chronicles. All rights reserved."
+            },
+            bn: {
+                title: "জুলাই ক্রনিকলস",
+                description: "আপনার গেটওয়ে সত্যিকারের খবর এবং সম্প্রদায়ের কণ্ঠস্বর",
+                home: "হোম",
+                categories: "বিভাগসমূহ",
+                trending: "ট্রেন্ডিং",
+                adviceBox: "পরামর্শ বাক্স",
+                about: "সম্পর্কে",
+                latestNews: "সর্বশেষ সংবাদ",
+                breakingNews: "ব্রেকিং নিউজ",
+                readMore: "আরও পড়ুন",
+                communityComments: "সম্প্রদায়ের মন্তব্য",
+                submitComment: "মন্তব্য জমা দিন",
+                adviceBoxTitle: "পরামর্শ বাক্স",
+                submitAdvice: "পরামর্শ জমা দিন",
+                footer: "© ২০২৩ জুলাই ক্রনিকলস। সর্বস্বত্ব সংরক্ষিত।"
+            }
+        };
+
+        // Apply translations to the page
+        const elements = {
+            title: document.querySelector('title'),
+            description: document.querySelector('meta[name="description"]'),
+            home: document.querySelector('a[href="#home"]'),
+            categories: document.querySelector('a[href="#categories"]'),
+            trending: document.querySelector('a[href="#trending"]'),
+            adviceBox: document.querySelector('a[href="#advice-box"]'),
+            about: document.querySelector('a[href="#about"]'),
+            latestNews: document.querySelector('#latest-news h2'),
+            breakingNews: document.querySelector('.hero h2'),
+            readMore: document.querySelector('.hero .btn'),
+            communityComments: document.querySelector('#comments h2'),
+            submitComment: document.querySelector('#comments button'),
+            adviceBoxTitle: document.querySelector('#advice-box h2'),
+            submitAdvice: document.querySelector('#advice-box button'),
+            footer: document.querySelector('footer p')
+        };
+
+        // Update the text content of each element
+        for (const key in elements) {
+            if (elements[key]) {
+                if (key === 'description') {
+                    elements[key].setAttribute('content', translations[lang][key]);
+                } else {
+                    elements[key].textContent = translations[lang][key];
+                }
+            }
+        }
+    }
+
+    // Apply the language on page load
+    applyLanguage();
+</script>
+    <script>
+        // Function to toggle dark mode
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode'); // Toggle the dark-mode class
     
-    <script>
-        fetch('fetch_global_news.php')
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById('global-news-container');
-                data.forEach(article => {
-                    const articleDiv = document.createElement('div');
-                    articleDiv.classList.add('news-item');
-                    articleDiv.innerHTML = `
-                        <h3>${article.title}</h3>
-                        <p>${article.description}</p>
-                        <a href="${article.url}" target="_blank">Read More</a>
-                    `;
-                    container.appendChild(articleDiv);
-                });
+            // Save the user's preference in localStorage
+            const isDarkMode = body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode);
+        }
+    
+        // Apply dark mode on page load if the user has previously enabled it
+        window.onload = function () {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+            }
+        };
+    </script>
+
+<script>
+    const API_KEY = '267c82ee6a6f4ed38573267d87d8af8b'; // Replace with your NewsAPI key
+
+    // Fetch Breaking News
+    async function fetchBreakingNews() {
+        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=${API_KEY}`);
+        const data = await response.json();
+        const breakingNewsSlider = document.querySelector('.breaking-news-slider');
+
+        if (data.articles && data.articles.length > 0) {
+            data.articles.slice(0, 5).forEach((article, index) => {
+                const newsItem = document.createElement('div');
+                newsItem.classList.add('news-item');
+                if (index === 0) newsItem.classList.add('active'); // Set the first item as active
+
+                newsItem.innerHTML = `
+                    <img src="${article.urlToImage || 'placeholder.jpg'}" alt="${article.title}">
+                    <h2>${article.title}</h2>
+                    <p>${article.description || 'No description available.'}</p>
+                    <a href="${article.url}" target="_blank">Read More</a>
+                `;
+                breakingNewsSlider.appendChild(newsItem);
             });
 
-            function toggleDarkMode() {
-        document.body.classList.toggle('dark-mode');
-        const isDarkMode = document.body.classList.contains('dark-mode');
-        localStorage.setItem('darkMode', isDarkMode);
+            startSlider('.breaking-news-slider .news-item');
+        }
     }
 
-    // Apply dark mode on page load
-    if (localStorage.getItem('darkMode') === 'true') {
-        document.body.classList.add('dark-mode');
+    // Fetch Trending News
+    async function fetchTrendingNews() {
+        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${API_KEY}`);
+        const data = await response.json();
+        const trendingNewsSlider = document.querySelector('.trending-news-slider');
+
+        if (data.articles && data.articles.length > 0) {
+            data.articles.slice(0, 5).forEach((article, index) => {
+                const newsItem = document.createElement('div');
+                newsItem.classList.add('news-item');
+                if (index === 0) newsItem.classList.add('active'); // Set the first item as active
+
+                newsItem.innerHTML = `
+                    <img src="${article.urlToImage || 'placeholder.jpg'}" alt="${article.title}">
+                    <h2>${article.title}</h2>
+                    <p>${article.description || 'No description available.'}</p>
+                    <a href="${article.url}" target="_blank">Read More</a>
+                `;
+                trendingNewsSlider.appendChild(newsItem);
+            });
+
+            startSlider('.trending-news-slider .news-item');
+        }
     }
-    </script>
+
+    // Start Slider Animation
+    function startSlider(selector) {
+        const items = document.querySelectorAll(selector);
+        let currentIndex = 0;
+
+        setInterval(() => {
+            items[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % items.length;
+            items[currentIndex].classList.add('active');
+        }, 5000); // Change slide every 5 seconds
+    }
+
+    // Initialize
+    fetchBreakingNews();
+    fetchTrendingNews();
+</script>
 </body>
 </html>
